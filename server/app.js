@@ -142,7 +142,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-const HOST = process.env.HOST || '127.0.0.1';
+const HOST = process.env.HOST || (process.env.NODE_ENV === 'production' || process.env.RENDER ? '0.0.0.0' : '127.0.0.1');
 
 // Start Server after connecting to MongoDB
 async function startServer() {
