@@ -1,0 +1,13 @@
+node_modules/
+.env
+dist/
+client/dist/
+server/uploads/music/*
+!server/uploads/music/.gitkeep
+server/uploads/artwork/*
+!server/uploads/artwork/.gitkeep
+server/data/db/*
+!server/data/db/.gitkeep
+.DS_Store
+Thumbs.db
+
