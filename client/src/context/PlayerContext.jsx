@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect, useRef } from 'r
 import * as api from '../services/api';
 
 const PlayerContext = createContext(null);
-const BACKEND_URL = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
+const BACKEND_URL = (import.meta.env.VITE_API_URL || (import.meta.env.PROD ? 'https://jitendra-music-player.onrender.com' : '')).replace(/\/$/, '');
 
 export function PlayerProvider({ children }) {
   // Persistent HTML5 Audio instance

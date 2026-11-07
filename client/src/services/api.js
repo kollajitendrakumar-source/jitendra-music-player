@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BACKEND_URL = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
+const BACKEND_URL = (import.meta.env.VITE_API_URL || (import.meta.env.PROD ? 'https://jitendra-music-player.onrender.com' : '')).replace(/\/$/, '');
 const API_BASE = BACKEND_URL ? `${BACKEND_URL}/api` : '/api';
 
 const api = axios.create({

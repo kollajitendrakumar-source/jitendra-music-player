@@ -57,7 +57,7 @@ export function getArtworkUrl(artworkPath) {
   if (artworkPath.startsWith('http://') || artworkPath.startsWith('https://') || artworkPath.startsWith('data:')) {
     return artworkPath;
   }
-  const backendBase = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
+  const backendBase = (import.meta.env.VITE_API_URL || (import.meta.env.PROD ? 'https://jitendra-music-player.onrender.com' : '')).replace(/\/$/, '');
   const cleanPath = artworkPath.startsWith('/') ? artworkPath : `/${artworkPath}`;
   return `${backendBase}${cleanPath}`;
 }
